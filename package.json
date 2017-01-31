@@ -1,0 +1,160 @@
+{
+  "name": "react-oslo-meetup-vr-demo",
+  "version": "1.0.0",
+  "description": "A simple WebVR demo page.",
+  "author": "Magnus Bergman <hello@magnus.sexy>",
+  "engines": {
+    "node": "7.4.0",
+    "npm": "4.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:magnus-bergman/react-oslo-meetup-vr-demo.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "jwt",
+    "json web tokens",
+    "auth",
+    "node",
+    "ava",
+    "webpack"
+  ],
+  "scripts": {
+    "postinstall": "npm run build",
+    "test": "CONFIG=$(pwd)/webpack.config.test.js BABEL_DISABLE_CACHE=1 NODE_ENV=test ava",
+    "coverage:test": "nyc npm run test",
+    "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage:watch": "nodemon --quiet --watch client --exec npm run coverage:test -s",
+    "lint": "standard",
+    "clean": "rimraf public",
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app -w app",
+    "preprod": "npm run clean -s",
+    "prod": "cross-env NODE_ENV=production webpack -p --colors --progress",
+    "postprod": "npm run generate-favicon",
+    "generate-favicon": "real-favicon generate client/favicon/favicon.json client/favicon/faviconData.json public"
+  },
+  "main": "client/scripts/entry.js",
+  "files": [
+    "client/scripts",
+    "!**/__tests__"
+  ],
+  "ava": {
+    "files": [
+      "client/scripts/**/__tests__/*.js"
+    ],
+    "source": [
+      "**/*.{js,jsx}",
+      "!public/**/*"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "verbose": true,
+    "require": [
+      "babel-register",
+      "./test/helpers/setup-browser-env.js"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "**/__tests__/**"
+    ],
+    "include": [
+      "client/scripts/**"
+    ],
+    "extension": [
+      ".jsx"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ]
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.2",
+    "ava": "^0.17.0",
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-webpack-loaders": "^0.8.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-1": "^6.22.0",
+    "body-parser": "^1.16.0",
+    "classnames": "^2.2.5",
+    "cli-real-favicon": "0.0.6",
+    "codecov": "^1.0.1",
+    "compression": "^1.6.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "cors": "^2.8.1",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
+    "csswring": "^5.1.1",
+    "dotenv": "^4.0.0",
+    "enzyme": "^2.7.1",
+    "es6-promise": "^4.0.5",
+    "es6-symbol": "^3.1.0",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "exports-loader": "^0.6.3",
+    "express": "^4.14.1",
+    "express-jwt": "^5.1.0",
+    "express-unless": "^0.3.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.2",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "^2.28.0",
+    "imports-loader": "^0.7.0",
+    "jsdom": "^9.9.1",
+    "json-loader": "^0.5.4",
+    "jsonwebtoken": "^7.2.1",
+    "lodash": "^4.17.4",
+    "morgan": "^1.7.0",
+    "node-sass": "^4.4.0",
+    "nodemon": "^1.11.0",
+    "null-loader": "^0.1.1",
+    "nyc": "^10.1.2",
+    "offline-plugin": "^4.5.5",
+    "postcss": "^5.2.11",
+    "postcss-loader": "^1.2.2",
+    "raw-loader": "^0.5.1",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-addons-transition-group": "^15.4.2",
+    "react-addons-update": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.7",
+    "react-transform-hmr": "^1.0.4",
+    "redux": "^3.6.0",
+    "redux-devtools": "^3.3.2",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0",
+    "redux-logger": "^2.7.4",
+    "redux-mock-store": "^1.2.2",
+    "redux-thunk": "^2.2.0",
+    "rimraf": "^2.5.4",
+    "sanitize.css": "^4.1.0",
+    "sass-loader": "^4.1.1",
+    "sinon": "^1.17.7",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.16.1",
+    "whatwg-fetch": "^2.0.2"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>React Oslo Meetup - WebVR Demo</title>
+
+    <meta name="description" content="Just a VR demo site for React Oslo Meetup.">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="React Oslo Meetup - WebVR Demo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://react-meetup-vr.herokuapp.com/">
+    <meta property="og:image" content="https://react-meetup-vr.herokuapp.com/media/fb_share.jpg">
+    <meta property="og:description" content="Just a VR demo site for React Oslo Meetup">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mgnsbrgmn">
+    <meta name="twitter:title" content="React Oslo Meetup - WebVR Demo">
+    <meta name="twitter:description" content="Just a VR demo site for React Oslo Meetup">
+    <meta name="twitter:creator" content="@mgnsbrgmn">
+    <!-- Twitter Summary card images must be at least 120x120px -->
+    <meta name="twitter:image" content="https://react-meetup-vr.herokuapp.com/media/fb_share.jpg">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="React Oslo Meetup - WebVR Demo">
+    <meta itemprop="description" content="Just a VR demo site for React Oslo Meetup">
+    <meta itemprop="image" content="https://react-meetup-vr.herokuapp.com/media/fb_share.jpg">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WebVR Demo">
+    <meta name="application-name" content="WebVR Demo">
+
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+
+    <% htmlWebpackPlugin.files.css.forEach(function (filePath) { %>
+      <style>
+        <%= compilation.assets[filePath.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+      </style>
+    <% }) %>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <% htmlWebpackPlugin.files.js.forEach(function (filePath) { %>
+      <script src="<%= filePath %>" defer></script>
+    <% }) %>
+  </body>
+</html>
