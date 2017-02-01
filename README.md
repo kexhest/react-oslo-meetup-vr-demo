@@ -48,6 +48,17 @@ To run the tests simply run:
 npm t
 ```
 
+### Publishing to Heroku
+This repo contains all necessary files to publish straight to Heroku using the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+[This guide](https://devcenter.heroku.com/articles/git) will tell you all about how to publish to heroku using git.
+
+And make sure you add the secret and user ENV vars to heroku to avoid having to push sensitive data to github.
+
+```
+heroku config:add SECRET='your secret' USERS='[{"id":1,"username":"john","firstName":"John","lastName":"Doe","password":"1234"}]'
+```
+
 ### Code style
 This repo follows the [airbnb](https://github.com/airbnb/javascript) javascript coding style guide. It also includes some default editor settings using [editor config](https://github.com/sindresorhus/editorconfig-sublime).
 
