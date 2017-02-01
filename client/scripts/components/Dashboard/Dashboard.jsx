@@ -25,9 +25,9 @@ export default class Dashboard extends Component {
     e.preventDefault();
     const { nextDemo } = this.props;
 
-    const { name, url } = e.currentTarget.dataset;
+    const { name } = e.currentTarget.dataset;
 
-    nextDemo({ name, url });
+    nextDemo(demos.find(demo => demo.name === name));
   }
 
   toggleDemo = (e) => {
@@ -50,6 +50,7 @@ export default class Dashboard extends Component {
       <div className="dashboard">
         <div className="top-bar">
           <p>{username}</p>
+          <button onClick={logoutUser}>Logout</button>
         </div>
 
         <ul>
@@ -59,8 +60,7 @@ export default class Dashboard extends Component {
                 key={d.name}
                 onClick={this.nextDemo}
                 data-name={d.name}
-                data-url={d.url}
-                className={classNames({ active: demo.name === d.name })}
+                className={classNames('demo-button', { active: demo.name === d.name })}
               >
                 {d.name}
               </button>
@@ -70,15 +70,12 @@ export default class Dashboard extends Component {
             <button
               onClick={this.toggleDemo}
               data-play={!demo.playing}
+              className={classNames('demo-button', { active: demo.playing })}
             >
               {demo.playing ? 'PAUSE' : 'PLAY'}
             </button>
           </li>
         </ul>
-
-        <div className="bottom">
-          <button onClick={logoutUser}>Logout</button>
-        </div>
       </div>
     );
   }

@@ -32,7 +32,6 @@ io.on('connection', (socket) => {
   socket.on('next', (data, cb) => {
     console.log('EMITTED NEXT!');
     demo = data;
-    demo.playing = false;
 
     socket.broadcast.emit('update', demo);
 

@@ -13,6 +13,7 @@ import App from 'containers/App/App';
 import Admin from 'containers/Admin/Admin';
 
 import Demo from 'components/Demo/Demo';
+import Links from 'components/Links/Links';
 import Login from 'components/Login/Login';
 import Dashboard from 'components/Dashboard/Dashboard';
 import NotFound from 'components/NotFound/NotFound';
@@ -72,6 +73,12 @@ export default [
     indexRoute: {
       component: Demo,
     },
+    childRoutes: [
+      {
+        path: 'links',
+        component: Links,
+      },
+    ],
   },
   {
     path: '/admin',

@@ -1,10 +1,16 @@
 /*
  * This file is part of the React Oslo Meetup VR Demo application.
+ *
+ * (c) Magnus Bergman <hello@magnus.sexy>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 import React, { PropTypes } from 'react';
 
 import Oslo from 'components/Oslo/Oslo';
+import Links from 'components/Links/Links';
 
 import './demo.scss';
 
@@ -13,16 +19,22 @@ import './demo.scss';
  *
  * @author Magnus Bergman <magnus@apt.no>
  */
-const Demo = ({ playing, name }) => {
+const Demo = ({ playing, name, items }) => {
   if (!playing) {
     return <div>WECOME TO THE DEMO!</div>;
   }
+
+  console.log(items);
 
   let demo = null;
 
   switch (name) {
     case 'oslo':
       demo = <Oslo />;
+      break;
+
+    case 'links':
+      demo = <Links items={items} />;
       break;
 
     default:
@@ -42,6 +54,7 @@ const Demo = ({ playing, name }) => {
 Demo.propTypes = {
   playing: PropTypes.bool,
   name: PropTypes.string,
+  items: PropTypes.array,
 };
 
 /**
@@ -50,6 +63,7 @@ Demo.propTypes = {
 Demo.defaultProps = {
   playing: false,
   name: '',
+  items: [],
 };
 
 export default Demo;

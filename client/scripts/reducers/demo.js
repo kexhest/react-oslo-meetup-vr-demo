@@ -8,9 +8,7 @@
  */
 
 import {
-  NEXT_DEMO_REQUEST,
   NEXT_DEMO_SUCCESS,
-  NEXT_DEMO_FAILURE,
   PLAY_DEMO_SUCCESS,
   PAUSE_DEMO_SUCCESS,
   REFRESH,
@@ -18,8 +16,6 @@ import {
 
 const initialState = {
   playing: false,
-  name: '',
-  url: '',
 };
 
 /**
@@ -28,36 +24,9 @@ const initialState = {
 export default function (state = initialState, { type, payload }) {
   switch (type) {
 
-    case NEXT_DEMO_REQUEST:
-      return {
-        ...state,
-        name: '',
-        playing: false,
-      };
-
     case NEXT_DEMO_SUCCESS:
-      return {
-        ...state,
-        ...payload,
-      };
-
-    case NEXT_DEMO_FAILURE:
-      return {
-        ...state,
-      };
-
     case PLAY_DEMO_SUCCESS:
-      return {
-        ...state,
-        ...payload,
-      };
-
     case PAUSE_DEMO_SUCCESS:
-      return {
-        ...state,
-        ...payload,
-      };
-
     case REFRESH:
       return {
         ...state,
