@@ -9,6 +9,7 @@
 
 import React from 'react';
 import 'aframe';
+
 import { Entity, Scene } from 'aframe-react';
 
 import oslo from 'gfx/images/oslo.jpg';
@@ -27,31 +28,11 @@ const Oslo = () =>
       material={{ shader: 'flat', src: oslo }}
       scale={[1, 1, -1]}
     />
-    {/* <Entity
-      geometry={{ primitive: 'box' }}
-      material="color: red"
-      position={[0, 0, -5]}
-    /> */}
     <Entity
-      // text={{ value: 'HELLO WORLD' }}
-      text={{ text: 'HELLO WORLD' }}
-      // bmfont-text={{ text: 'HELLO WORLD' }}
-      // material={{ color: 'blue' }}
-      material={{ color: '#FFFFFF' }}
-      // position={[-1.75, 1, -3]}
-      position={[0, 1, -5]}
+      material={{ color: '#000000' }}
+      text={{ value: 'Welcome to APT', color: '#000000', align: 'center', width: 40 }}
+      position={[0, 4, -10]}
     />
-    {/* <Entity
-      light={{ type: 'ambient', color: '#888' }}
-    />
-    <Entity
-      light={{ type: 'directional', intensity: 0.5 }}
-      position={[-1, 1, 0]}
-    />
-    <Entity
-      light={{ type: 'directional', intensity: 1 }}
-      position={[1, 1, 0]}
-    /> */}
   </Scene>;
 
 /**
