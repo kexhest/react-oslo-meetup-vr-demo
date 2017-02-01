@@ -85,7 +85,7 @@ export default class City extends Component {
           position={[-3, 6, -10]}
         >
           <Entity
-            geometry={{ primitive: 'box', widht: 0.4, height: 0.6, depth: 0.5 }}
+            geometry={{ primitive: 'sphere', radius: 2 }}
             material={{ transparent: true, opacity: 0 }}
             position={[0, 0, 0]}
             onClick={this.onClickHandler}
