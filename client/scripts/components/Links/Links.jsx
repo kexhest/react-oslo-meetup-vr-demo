@@ -7,7 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+
+import links from 'data/links';
 
 import './links.scss';
 
@@ -16,9 +18,9 @@ import './links.scss';
  *
  * @author Magnus Bergman <magnus@apt.no>
  */
-const Links = ({ items }) =>
+const Links = () =>
   <ul className="links" >
-    {items.map(item =>
+    {links.map(item =>
       <li>
         <a href={item.url}>{item.name}</a>
       </li>
@@ -28,15 +30,11 @@ const Links = ({ items }) =>
 /**
  * Declare expected property types.
  */
-Links.propTypes = {
-  items: PropTypes.array,
-};
+Links.propTypes = {};
 
 /**
  * Set default properties.
  */
-Links.defaultProps = {
-  items: [],
-};
+Links.defaultProps = {};
 
 export default Links;

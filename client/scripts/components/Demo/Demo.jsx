@@ -19,12 +19,10 @@ import './demo.scss';
  *
  * @author Magnus Bergman <magnus@apt.no>
  */
-const Demo = ({ playing, name, items }) => {
-  if (!playing) {
+const Demo = ({ playing, name }) => {
+  if (!playing || !name) {
     return <div>WECOME TO THE DEMO!</div>;
   }
-
-  console.log(items);
 
   let demo = null;
 
@@ -34,7 +32,7 @@ const Demo = ({ playing, name, items }) => {
       break;
 
     case 'links':
-      demo = <Links items={items} />;
+      demo = <Links />;
       break;
 
     default:
@@ -54,7 +52,6 @@ const Demo = ({ playing, name, items }) => {
 Demo.propTypes = {
   playing: PropTypes.bool,
   name: PropTypes.string,
-  items: PropTypes.array,
 };
 
 /**
@@ -63,7 +60,6 @@ Demo.propTypes = {
 Demo.defaultProps = {
   playing: false,
   name: '',
-  items: [],
 };
 
 export default Demo;

@@ -10,7 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-import demos from './demos';
+import demos from 'data/demos';
 
 import './dashboard.scss';
 
