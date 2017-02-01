@@ -14,7 +14,7 @@ import links from 'data/links';
 import './links.scss';
 
 /**
- * This is the Links component class.
+ * This is the Links component.
  *
  * @author Magnus Bergman <magnus@apt.no>
  */

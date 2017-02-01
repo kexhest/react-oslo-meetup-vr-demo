@@ -20,7 +20,7 @@ import Message from '../Message/Message';
 import './field.scss';
 
 /**
- * This is the Field component class.
+ * This is the Field component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */
@@ -29,7 +29,7 @@ export default class Field extends Component {
   /**
    * Create Field and set initial state.
    *
-   * @param {object} props
+   * @param {Object} props
    *
    * @return void
    */
@@ -44,8 +44,8 @@ export default class Field extends Component {
   /**
    * Prevent component from doing unnecessary re-renders.
    *
-   * @param {object} nextProps
-   * @param {object} nextState
+   * @param {Object} nextProps
+   * @param {Object} nextState
    *
    * @return {bool}
    */
@@ -56,7 +56,7 @@ export default class Field extends Component {
   /**
    * Event handler that passes values to parent component.
    *
-   * @param {object} e
+   * @param {Object} e
    *
    * @return void
    */
@@ -92,7 +92,7 @@ export default class Field extends Component {
   /**
    * Render field based on type.
    *
-   * @return {object}
+   * @return {Object}
    */
   createField() {
     const { focus } = this.state;
@@ -178,7 +178,7 @@ export default class Field extends Component {
   /**
    * Render react component.
    *
-   * @return {object}
+   * @return {Object}
    */
   render() {
     const { focus } = this.state;

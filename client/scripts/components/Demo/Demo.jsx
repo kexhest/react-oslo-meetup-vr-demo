@@ -8,39 +8,49 @@
  */
 
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
-import Oslo from 'components/Oslo/Oslo';
 import Links from 'components/Links/Links';
+
+import Hello from './Hello/Hello';
+import Oslo from './Oslo/Oslo';
+import City from './City/City';
 
 import './demo.scss';
 
 /**
- * This is the Demo component class.
+ * This is the Demo component.
  *
  * @author Magnus Bergman <magnus@apt.no>
  */
 const Demo = ({ playing, name }) => {
-  if (!playing || !name) {
-    return <div>WECOME TO THE DEMO!</div>;
-  }
+  let demo = 'Grab some popcorn, the demo will begin shortly!';
 
-  let demo = null;
+  if (playing) {
+    switch (name) {
+      case 'hello':
+        demo = <Hello />;
+        break;
 
-  switch (name) {
-    case 'oslo':
-      demo = <Oslo />;
-      break;
+      case 'oslo':
+        demo = <Oslo />;
+        break;
 
-    case 'links':
-      demo = <Links />;
-      break;
+      case 'city':
+        demo = <City />;
+        break;
 
-    default:
-      // no-op
+      case 'links':
+        demo = <Links />;
+        break;
+
+      default:
+        // no-op
+    }
   }
 
   return (
-    <div className="demo">
+    <div className={classNames({ demo: playing })}>
       {demo}
     </div>
   );

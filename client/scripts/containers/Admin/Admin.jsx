@@ -22,7 +22,7 @@ import {
 import './admin.scss';
 
 /**
- * This is the Admin component class.
+ * This is the Admin component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */
@@ -69,7 +69,7 @@ export class Admin extends Component {
   /**
    * Render react component.
    *
-   * @return {object}
+   * @return {Object}
    */
   render() {
     const {
@@ -142,9 +142,9 @@ Admin.defaultProps = {
 /**
  * Map state to props.
  *
- * @param {object} state
+ * @param {Object} state
  *
- * @return {object}
+ * @return {Object}
  */
 const mapStateToProps = state => ({
   auth: state.auth,

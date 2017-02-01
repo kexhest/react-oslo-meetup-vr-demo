@@ -12,7 +12,7 @@ import React, { PropTypes } from 'react';
 import './message.scss';
 
 /**
- * This is the Message component class.
+ * This is the Message component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

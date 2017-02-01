@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import './submit-button.scss';
 
 /**
- * This is the SubmitButton component class.
+ * This is the SubmitButton component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

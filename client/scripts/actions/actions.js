@@ -17,9 +17,9 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 /**
  * Login user action.
  *
- * @param {object} creds
+ * @param {Object} creds
  *
- * @return {object}
+ * @return {Object}
  */
 export const loginUser = creds => ({
   [API]: {
@@ -40,9 +40,9 @@ export const GET_USER_FAILURE = 'GET_USER_FAILURE';
 /**
  * Get user action.
  *
- * @param {string} token
+ * @param {String} token
  *
- * @return {object}
+ * @return {Object}
  */
 export const getUser = token => ({
   [API]: {
@@ -60,7 +60,7 @@ export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 /**
  * Logout user action.
  *
- * @return {object}
+ * @return {Object}
  */
 export const logoutUser = token => ({
   [API]: {
@@ -78,7 +78,7 @@ export const NEXT_DEMO_FAILURE = 'NEXT_DEMO_FAILURE';
 /**
  * Next demo action.
  *
- * @return {object}
+ * @return {Object}
  */
 export const nextDemo = data => ({
   [SOCKET]: {
@@ -95,7 +95,7 @@ export const PLAY_DEMO_FAILURE = 'PLAY_DEMO_FAILURE';
 /**
 * Play demo action.
 *
-* @return {object}
+* @return {Object}
 */
 export const playDemo = data => ({
   [SOCKET]: {
@@ -112,7 +112,7 @@ export const PAUSE_DEMO_FAILURE = 'PAUSE_DEMO_FAILURE';
 /**
  * Pause demo action.
  *
- * @return {object}
+ * @return {Object}
  */
 export const pauseDemo = data => ({
   [SOCKET]: {
@@ -127,7 +127,7 @@ export const REFRESH = 'REFRESH';
 /**
  * Refresh demo action.
  *
- * @return {object}
+ * @return {Object}
  */
 export const refreshDemo = data => ({
   type: REFRESH,

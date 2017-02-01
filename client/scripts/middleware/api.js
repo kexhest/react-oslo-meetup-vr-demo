@@ -14,9 +14,9 @@ export const BASE_URL = '/v1';
 /**
  * Creates request object and returns a fetch promise.
  *
- * @param {string} endpoint
- * @param {string} method
- * @param {object} body
+ * @param {String} endpoint
+ * @param {String} method
+ * @param {Object} body
  * @param {bool} token
  *
  * @return {Promise}

@@ -47,6 +47,12 @@ acorn@^4.0.1, acorn@^4.0.3, acorn@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
 
+aframe-animation-component@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/aframe-animation-component/-/aframe-animation-component-3.2.1.tgz#49029e7632598add112310a2b9ff014a77f20b72"
+  dependencies:
+    animejs "^1.1.0"
+
 aframe-bmfont-text-component@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/aframe-bmfont-text-component/-/aframe-bmfont-text-component-0.1.4.tgz#09228566fcbc3818817b19d3ab84d7ea28801ac8"
@@ -64,23 +70,6 @@ aframe-react@^3.4.1:
 aframe-text-component@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/aframe-text-component/-/aframe-text-component-0.4.2.tgz#3d2ebefe2cb1f9b83dec53f71e3ac405559fa2eb"
-
-aframe@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/aframe/-/aframe-0.4.1.tgz#cfdd8c1b53fb267c09fa55794fb2e9c87ed3bfca"
-  dependencies:
-    browserify-css "^0.8.2"
-    debug "^2.2.0"
-    deep-assign "^2.0.0"
-    document-register-element dmarcos/document-register-element#8ccc532b7
-    envify "^3.4.1"
-    object-assign "^4.0.1"
-    present "0.0.6"
-    promise-polyfill "^3.1.0"
-    style-attr "^1.0.2"
-    three "^0.82.1"
-    tween.js "^15.0.0"
-    webvr-polyfill "^0.9.23"
 
 aframe@aframevr/aframe:
   version "0.4.0"
@@ -139,6 +128,10 @@ amdefine@>=0.0.4:
 an-array@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/an-array/-/an-array-1.0.0.tgz#c125a5bb8257778e35f4b4f6aa9c7d0fa9e42665"
+
+animejs@^1.1.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-1.1.3.tgz#685ea5e837981d98bdab2ab168aa8530955e970d"
 
 ansi-align@^1.1.0:
   version "1.1.0"
@@ -7964,10 +7957,6 @@ three-buffer-vertex-data@^1.0.0:
   resolved "https://registry.yarnpkg.com/three-buffer-vertex-data/-/three-buffer-vertex-data-1.1.0.tgz#cf228e78427665884b961a4cabe1f85ed39f82b1"
   dependencies:
     flatten-vertex-data "^1.0.0"
-
-three@^0.82.1:
-  version "0.82.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.82.1.tgz#f63c3730971520c54479e3627d370d764a4a8383"
 
 three@^0.83.0:
   version "0.83.0"

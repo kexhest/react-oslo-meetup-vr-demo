@@ -61,6 +61,16 @@ const config = {
           limit: 10000,
           name: `media/${production ? '[hash:8]' : '[name]'}.[ext]`,
         },
+        exclude: /(models)/,
+      },
+      {
+        test: /\.(obj|mtl|png)$/,
+        loader: 'file-loader',
+        query: {
+          limit: 10000,
+          name: 'media/[name].[ext]',
+        },
+        include: /(models)/,
       },
       {
         test: /\.scss$/,
@@ -168,7 +178,7 @@ const config = {
         },
       }),
       new ExtractTextPlugin('styles/[contenthash].css'),
-      new OfflinePlugin(),
+      // new OfflinePlugin(),
     ]
   ),
 };

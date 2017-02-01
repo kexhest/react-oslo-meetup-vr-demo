@@ -14,10 +14,8 @@ import { Entity, Scene } from 'aframe-react';
 
 import oslo from 'gfx/images/oslo.jpg';
 
-import './oslo.scss';
-
 /**
- * This is the Oslo component class.
+ * This is the Oslo component.
  *
  * @author Magnus Bergman <magnus@apt.no>
  */
@@ -29,8 +27,8 @@ const Oslo = () =>
       scale={[1, 1, -1]}
     />
     <Entity
-      material={{ color: '#000000' }}
-      text={{ value: 'Welcome to APT', color: '#000000', align: 'center', width: 40 }}
+      material={{ color: '#000' }}
+      text={{ value: 'Welcome to APT', color: '#000', align: 'center', width: 40 }}
       position={[0, 4, -10]}
     />
   </Scene>;

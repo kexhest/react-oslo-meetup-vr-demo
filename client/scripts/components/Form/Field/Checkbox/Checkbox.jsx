@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import './checkbox.scss';
 
 /**
- * This is the Checkbox component class.
+ * This is the Checkbox component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

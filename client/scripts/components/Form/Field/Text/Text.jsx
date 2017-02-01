@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import './text.scss';
 
 /**
- * This is the Text component class.
+ * This is the Text component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

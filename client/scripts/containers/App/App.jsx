@@ -17,7 +17,7 @@ import io from 'utils/socket';
 import './app.scss';
 
 /**
- * This is the App component class.
+ * This is the App component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */
@@ -71,9 +71,9 @@ App.defaultProps = {
 /**
  * Map state to props.
  *
- * @param {object} state
+ * @param {Object} state
  *
- * @return {object}
+ * @return {Object}
  */
 const mapStateToProps = state => ({
   demo: state.demo,

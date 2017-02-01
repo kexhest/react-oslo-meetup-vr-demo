@@ -14,8 +14,8 @@ import io from 'utils/socket';
 /**
  * Emits an even through socket.io.
  *
- * @param {string} event
- * @param {object} data
+ * @param {String} event
+ * @param {Object} data
  *
  * @return {Promise}
  */

@@ -13,7 +13,7 @@ import { Link } from 'react-router';
 import './not-found.scss';
 
 /**
- * This is the NotFound component class.
+ * This is the NotFound component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

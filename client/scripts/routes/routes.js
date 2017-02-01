@@ -27,7 +27,7 @@ import NotFound from 'components/NotFound/NotFound';
 /**
  * Block access to routes depending on auth status.
  *
- * @param {object} nextState
+ * @param {Object} nextState
  * @param {function} replace
  *
  * @return {void}
@@ -48,7 +48,7 @@ function requireAuth(nextState, replace) {
 /**
  * Redirect to startpage if user is authed.
  *
- * @param {object} nextState
+ * @param {Object} nextState
  * @param {function} replace
  *
  * @return {void}

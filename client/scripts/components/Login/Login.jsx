@@ -14,7 +14,7 @@ import Form from 'components/Form/Form';
 import './login.scss';
 
 /**
- * This is the Login component class.
+ * This is the Login component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

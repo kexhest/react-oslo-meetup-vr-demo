@@ -21,16 +21,16 @@ const io = require('socket.io')(server);
 let demo = {};
 
 io.on('connection', (socket) => {
-  console.log('CONNECTED TO SOCKET!');
+  // console.log('CONNECTED TO SOCKET!');
 
   socket.on('init', (cb) => {
-    console.log('GOT init!');
+    // console.log('GOT init!');
 
     cb(demo);
   });
 
   socket.on('next', (data, cb) => {
-    console.log('EMITTED NEXT!');
+    // console.log('EMITTED NEXT!');
     demo = data;
 
     socket.broadcast.emit('update', demo);
@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('play', (data, cb) => {
-    console.log('EMITTED PLAY!');
+    // console.log('EMITTED PLAY!');
     demo = data;
     demo.playing = true;
 
@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('pause', (data, cb) => {
-    console.log('EMITTED PAUSE!');
+    // console.log('EMITTED PAUSE!');
     demo = data;
     demo.playing = false;
 

@@ -10,7 +10,7 @@
 import React, { PropTypes } from 'react';
 
 /**
- * This is the Arrow component class.
+ * This is the Arrow component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

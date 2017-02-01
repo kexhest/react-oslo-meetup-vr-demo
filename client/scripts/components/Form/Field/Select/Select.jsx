@@ -23,7 +23,7 @@ const renderOptions = (options = []) =>
   ));
 
 /**
- * This is the Select component class.
+ * This is the Select component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */

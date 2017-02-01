@@ -20,7 +20,7 @@ import Message from './Message/Message';
 import './form.scss';
 
 /**
- * This is the Form component class.
+ * This is the Form component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */
@@ -29,7 +29,7 @@ export default class Form extends Component {
   /**
    * Create Form and set initial state.
    *
-   * @param {object} props
+   * @param {Object} props
    *
    * @return {void}
    */
@@ -59,7 +59,7 @@ export default class Form extends Component {
    * React component lifecycle method that is triggered when the component
    * receives new props.
    *
-   * @param {object} nextProps
+   * @param {Object} nextProps
    *
    * @return {void}
    */
@@ -88,7 +88,7 @@ export default class Form extends Component {
   /**
    * Event handler that handles for submit.
    *
-   * @param {object} e
+   * @param {Object} e
    *
    * @return {void}
    */
@@ -125,7 +125,7 @@ export default class Form extends Component {
   /**
    * Set error.
    *
-   * @param {object} newError
+   * @param {Object} newError
    *
    * @return {void}
    */
@@ -149,9 +149,9 @@ export default class Form extends Component {
   /**
    * Set field status.
    *
-   * @param {string} name
+   * @param {String} name
    * @param {string|number|bool} value
-   * @param {string} err
+   * @param {String} err
    */
   setFieldStatus(name, value, err) {
     const { form, error } = this.state;
@@ -205,12 +205,12 @@ export default class Form extends Component {
    * Validate tel as a string with 8 digits starting with 4 or 9.
    * Validate text as a string which is not empty or only whitespace.
    *
-   * @param {string} name
-   * @param {string} label
-   * @param {string} value
+   * @param {String} name
+   * @param {String} label
+   * @param {String} value
    * @param {bool} required
-   * @param {string} constraints
-   * @param {string} confirm
+   * @param {String} constraints
+   * @param {String} confirm
    *
    * @return {boolean}
    */
@@ -253,7 +253,7 @@ export default class Form extends Component {
   /**
    * Render react component.
    *
-   * @return {object}
+   * @return {Object}
    */
   render() {
     const { legend, fields, submitText, sending } = this.props;

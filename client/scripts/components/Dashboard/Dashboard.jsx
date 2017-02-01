@@ -15,12 +15,19 @@ import demos from 'data/demos';
 import './dashboard.scss';
 
 /**
- * This is the Dashboard component class.
+ * This is the Dashboard component.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */
 export default class Dashboard extends Component {
 
+  /**
+   * Trigger demo based on data attributes on the button that was clicked.
+   *
+   * @param  {Object} e
+   *
+   * @return {void}
+   */
   nextDemo = (e) => {
     e.preventDefault();
     const { nextDemo } = this.props;
@@ -30,6 +37,13 @@ export default class Dashboard extends Component {
     nextDemo(demos.find(demo => demo.name === name));
   }
 
+  /**
+   * Toggle play/paused state of the demo.
+   *
+   * @param  {Object} e
+   *
+   * @return {void}
+   */
   toggleDemo = (e) => {
     e.preventDefault();
     const { demo, playDemo, pauseDemo } = this.props;
@@ -43,6 +57,11 @@ export default class Dashboard extends Component {
     }
   }
 
+  /**
+   * Render Demo.
+   *
+   * @return {Object}
+   */
   render() {
     const { username, demo, logoutUser } = this.props;
 
