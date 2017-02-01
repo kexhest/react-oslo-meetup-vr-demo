@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *

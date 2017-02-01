@@ -1,4 +1,11 @@
-import './form.scss';
+/*
+ * This file is part of the React Oslo Meetup VR Demo application.
+ *
+ * (c) Magnus Bergman <hello@magnus.sexy>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 import React, { Component, PropTypes } from 'react';
 import update from 'react-addons-update';
@@ -9,6 +16,8 @@ import isEqual from 'lodash/isEqual';
 import Field from './Field/Field';
 import SubmitButton from './SubmitButton/SubmitButton';
 import Message from './Message/Message';
+
+import './form.scss';
 
 /**
  * This is the Form component class.
@@ -34,10 +43,6 @@ export default class Form extends Component {
       form,
       error,
     };
-
-    this.reset = this.reset.bind(this);
-    this.validate = this.validate.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
 
     props.fields.forEach((field) => {
       this.state.form[field.name] = {
@@ -87,7 +92,7 @@ export default class Form extends Component {
    *
    * @return {void}
    */
-  onSubmit(e) {
+  onSubmit = (e) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -107,7 +112,7 @@ export default class Form extends Component {
 
       error = !this.validate(name, label, form[name].value, required, constraints, confirm);
 
-      if (error) errors++;
+      if (error) errors += 1;
 
       data[name] = form[name].value;
     });
@@ -173,7 +178,7 @@ export default class Form extends Component {
    *
    * @return {void}
    */
-  reset(e) {
+  reset = (e) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -209,7 +214,7 @@ export default class Form extends Component {
    *
    * @return {boolean}
    */
-  validate(name, label, value, required, constraints, confirm) {
+  validate = (name, label, value, required, constraints, confirm) => {
     const { messages } = this.props;
     const { form } = this.state;
 

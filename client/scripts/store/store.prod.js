@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -11,6 +11,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import api from 'middleware/api';
+import socket from 'middleware/socket';
 
 import rootReducer from 'reducers/reducers';
 
@@ -19,7 +20,7 @@ import rootReducer from 'reducers/reducers';
  */
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk, api)
+  applyMiddleware(thunk, api, socket)
 );
 
 export default store;

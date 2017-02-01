@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import './not-found.scss';
-
 import React from 'react';
 import { Link } from 'react-router';
+
+import './not-found.scss';
 
 /**
  * This is the NotFound component class.

@@ -14,11 +14,10 @@
       "node": {
         "moduleDirectory": [
           "node_modules",
-          "assets/client/scripts",
-          "assets/client/styles",
-          "assets/client/fonts",
-          "assets/client/media",
-          "assets/client/translations"
+          "client/scripts",
+          "client/styles",
+          "client/fonts",
+          "client/media"
         ]
       }
     }

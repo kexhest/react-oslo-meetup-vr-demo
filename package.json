@@ -75,6 +75,10 @@
     ]
   },
   "dependencies": {
+    "aframe": "aframevr/aframe",
+    "aframe-bmfont-text-component": "^0.1.4",
+    "aframe-react": "^3.4.1",
+    "aframe-text-component": "^0.4.2",
     "autoprefixer": "^6.7.2",
     "ava": "^0.17.0",
     "babel-core": "^6.22.1",
@@ -148,6 +152,8 @@
     "sanitize.css": "^4.1.0",
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.7",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",

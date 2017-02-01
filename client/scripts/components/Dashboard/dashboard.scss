@@ -1,13 +1,65 @@
 @import '~utils/__utils';
 
 .dashboard {
-  button {
-    margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
 
-    padding: .5em 1em;
+  height: 100%;
+
+  width: 100%;
+  max-width: 32em;
+
+  button {
+    height: 100%;
+    width: 100%;
+
+    padding: 1em;
 
     color: $color-contrast-rich;
 
     background: $color-base;
+
+    &.active {
+      background: $color-contrast-poor;
+    }
+  }
+
+  .top-bar {
+    align-self: flex-start;
+
+    width: 100%;
+
+    background: $color-contrast-rich;
+    color: $color-base;
+
+    text-align: center;
+  }
+
+  .bottom {
+    width: 100%;
+
+    // margin-top: auto;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 100%;
+
+    width: 100%;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  li {
+    flex: 1 1 100%;
+
+    margin: 0.5em 0;
+
+    width: 100%;
   }
 }

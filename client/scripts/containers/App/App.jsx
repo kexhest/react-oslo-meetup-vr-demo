@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -7,12 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import './app.scss';
-
 import React, { Component, PropTypes, cloneElement } from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from 'actions/actions';
+import { refreshDemo as refreshDemoAction } from 'actions/actions';
+
+import io from 'utils/socket';
+
+import './app.scss';
 
 /**
  * This is the App component class.
@@ -21,87 +23,34 @@ import * as actions from 'actions/actions';
  */
 export class App extends Component {
 
-  /**
-   * Create App and set initial state.
-   *
-   * @param {object} props
-   *
-   * @return void
-   */
-  // constructor (props) {
-  //   super(props)
-  // }
-
-  /**
-   * Lifecycle method, triggered when the component is mounted to the DOM.
-   *
-   * @return {void}
-   */
   componentDidMount() {
-    const { auth, getUser } = this.props;
-    const { router } = this.context;
+    const { refreshDemo } = this.props;
 
-    // Token exists from before, try to fetch user details to see if session is
-    // still valid. If not, redirect to login.
-    if (auth.isAuthenticated) {
-      getUser(auth.token)
-        .then((response) => {
-          if (response.type === 'GET_USER_FAILURE') router.replace('/login');
-        });
-    }
+    io.on('update', (data) => {
+      refreshDemo(data);
+    });
   }
 
-  /**
-   * Lifecycle method, triggered when the component receives new props.
-   *
-   * @return {void}
-   */
-  componentWillReceiveProps(nextProps) {
-    const { location, auth } = this.props;
-    const { router } = this.context;
-
-    // User has successfully logged in, redirect to '/' -> dashboard.
-    if (!auth.isAuthenticated && nextProps.auth.isAuthenticated) {
-      router.replace((location.state && location.state.next) || '/');
-    }
-
-    if (auth.isAuthenticated && !nextProps.auth.isAuthenticated) {
-      router.replace('/login');
-    }
-  }
-
-  /**
-   * Render react component.
-   *
-   * @return {object}
-   */
   render() {
-    const { user, login, children, loginUser, logoutUser } = this.props;
+    const { children, demo } = this.props;
 
     return (
       <div className="app">
         {children && cloneElement(children, {
-          ...user,
-          ...login,
-          loginUser,
-          logoutUser,
+          ...demo,
         })}
       </div>
     );
   }
-
 }
 
 /**
  * Declare expected property types.
  */
 App.propTypes = {
-  children: PropTypes.element,
-  location: PropTypes.object,
-  actions: PropTypes.object,
-  auth: PropTypes.object,
-  user: PropTypes.object,
-  login: PropTypes.object,
+  children: PropTypes.element.isRequired,
+  demo: PropTypes.object,
+  refreshDemo: PropTypes.func,
 };
 
 /**
@@ -114,7 +63,10 @@ App.contextTypes = {
 /**
  * Set default properties.
  */
-App.defaultProps = {};
+App.defaultProps = {
+  demo: {},
+  refreshDemo: () => {},
+};
 
 /**
  * Map state to props.
@@ -124,9 +76,7 @@ App.defaultProps = {};
  * @return {object}
  */
 const mapStateToProps = state => ({
-  auth: state.auth,
-  user: state.user,
-  login: state.login,
+  demo: state.demo,
 });
 
 /**
@@ -135,5 +85,7 @@ const mapStateToProps = state => ({
  */
 export default connect(
   mapStateToProps,
-  actions
+  {
+    refreshDemo: refreshDemoAction,
+  }
 )(App);

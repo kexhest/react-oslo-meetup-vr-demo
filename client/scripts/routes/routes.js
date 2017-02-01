@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -10,7 +10,9 @@
 import store from 'store/store';
 
 import App from 'containers/App/App';
+import Admin from 'containers/Admin/Admin';
 
+import Demo from 'components/Demo/Demo';
 import Login from 'components/Login/Login';
 import Dashboard from 'components/Dashboard/Dashboard';
 import NotFound from 'components/NotFound/NotFound';
@@ -34,7 +36,7 @@ function requireAuth(nextState, replace) {
 
   if (!auth.isAuthenticated) {
     replace({
-      pathname: '/login',
+      pathname: '/admin/login',
       state: {
         next: nextState.location.pathname,
       },
@@ -67,12 +69,18 @@ export default [
   {
     path: '/',
     component: App,
+    indexRoute: {
+      component: Demo,
+    },
+  },
+  {
+    path: '/admin',
+    component: Admin,
+    indexRoute: {
+      onEnter: requireAuth,
+      component: Dashboard,
+    },
     childRoutes: [
-      {
-        path: 'admin',
-        onEnter: requireAuth,
-        component: Dashboard,
-      },
       {
         path: 'login',
         onEnter: redirectToDashboard,

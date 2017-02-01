@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -15,6 +15,7 @@ import rootReducer from 'reducers/reducers';
 import DevTools from 'containers/DevTools';
 
 import api from 'middleware/api';
+import socket from 'middleware/socket';
 
 /**
  * This is the redux store. It applies reducers and middlewares.
@@ -22,7 +23,7 @@ import api from 'middleware/api';
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk, api, createLogger()),
+    applyMiddleware(thunk, api, socket, createLogger()),
     DevTools.instrument()
   )
 );

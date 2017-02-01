@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -7,53 +7,103 @@
  * file that was distributed with this source code.
  */
 
-import './dashboard.scss';
+import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
-import React, { PropTypes } from 'react';
+import demos from './demos';
+
+import './dashboard.scss';
 
 /**
  * This is the Dashboard component class.
  *
  * @author Magnus Bergman <hello@magnus.sexy>
  */
-const Dashboard = ({ id, username, firstName, lastName, logoutUser }) =>
-  <article className="dashboard">
-    <header>
-      <h2>Logged in as:</h2>
-    </header>
-    <table>
-      <tbody>
-        <tr>
-          <td>id:</td>
-          <td className="id">{id}</td>
-        </tr>
-        <tr>
-          <td>username:</td>
-          <td className="username">{username}</td>
-        </tr>
-        <tr>
-          <td>full name:</td>
-          <td className="fullname">{firstName} {lastName}</td>
-        </tr>
-      </tbody>
-    </table>
-    <button onClick={logoutUser}>Logout</button>
-  </article>;
+export default class Dashboard extends Component {
+
+  nextDemo = (e) => {
+    e.preventDefault();
+    const { nextDemo } = this.props;
+
+    const { name, url } = e.currentTarget.dataset;
+
+    nextDemo({ name, url });
+  }
+
+  toggleDemo = (e) => {
+    e.preventDefault();
+    const { demo, playDemo, pauseDemo } = this.props;
+
+    const { play } = e.currentTarget.dataset;
+
+    if (play === 'true') {
+      playDemo(demo);
+    } else {
+      pauseDemo(demo);
+    }
+  }
+
+  render() {
+    const { username, demo, logoutUser } = this.props;
+
+    return (
+      <div className="dashboard">
+        <div className="top-bar">
+          <p>{username}</p>
+        </div>
+
+        <ul>
+          {demos.map(d =>
+            <li>
+              <button
+                key={d.name}
+                onClick={this.nextDemo}
+                data-name={d.name}
+                data-url={d.url}
+                className={classNames({ active: demo.name === d.name })}
+              >
+                {d.name}
+              </button>
+            </li>
+          )}
+          <li>
+            <button
+              onClick={this.toggleDemo}
+              data-play={!demo.playing}
+            >
+              {demo.playing ? 'PAUSE' : 'PLAY'}
+            </button>
+          </li>
+        </ul>
+
+        <div className="bottom">
+          <button onClick={logoutUser}>Logout</button>
+        </div>
+      </div>
+    );
+  }
+}
 
 /**
  * Declare expected property types.
  */
 Dashboard.propTypes = {
-  id: PropTypes.number,
   username: PropTypes.string,
-  firstName: PropTypes.string,
-  lastName: PropTypes.string,
+  demo: PropTypes.object,
   logoutUser: PropTypes.func,
+  nextDemo: PropTypes.func,
+  playDemo: PropTypes.func,
+  pauseDemo: PropTypes.func,
 };
 
 /**
  * Set default properties.
  */
-Dashboard.defaultProps = {};
-
-export default Dashboard;
+Dashboard.defaultProps = {
+  username: '',
+  demo: {},
+  logoutUser: () => {},
+  nextDemo: () => {},
+  playDemo: () => {},
+  pauseDemo: () => {},
+};

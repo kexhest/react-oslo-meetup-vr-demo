@@ -16,6 +16,50 @@ const dev = process.env.NODE_ENV === 'development';
 const app = express();
 const server = http.createServer(app);
 
+const io = require('socket.io')(server);
+
+let demo = {};
+
+io.on('connection', (socket) => {
+  console.log('CONNECTED TO SOCKET!');
+
+  socket.on('init', (cb) => {
+    console.log('GOT init!');
+
+    cb(demo);
+  });
+
+  socket.on('next', (data, cb) => {
+    console.log('EMITTED NEXT!');
+    demo = data;
+    demo.playing = false;
+
+    socket.broadcast.emit('update', demo);
+
+    cb(demo);
+  });
+
+  socket.on('play', (data, cb) => {
+    console.log('EMITTED PLAY!');
+    demo = data;
+    demo.playing = true;
+
+    socket.broadcast.emit('update', demo);
+
+    cb(demo);
+  });
+
+  socket.on('pause', (data, cb) => {
+    console.log('EMITTED PAUSE!');
+    demo = data;
+    demo.playing = false;
+
+    socket.broadcast.emit('update', demo);
+
+    cb(demo);
+  });
+});
+
 app.use(compression());
 app.use(logger(logLevel));
 

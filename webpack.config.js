@@ -36,6 +36,7 @@ const config = {
     modules: [
       path.resolve(__dirname, 'client', 'scripts'),
       path.resolve(__dirname, 'client', 'styles'),
+      path.resolve(__dirname, 'client', 'media'),
       'node_modules',
     ],
     extensions: ['.js', '.jsx', '.json', 'scss'],

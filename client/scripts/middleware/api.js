@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -8,9 +8,6 @@
  */
 
 import Symbol from 'es6-symbol';
-
-require('es6-promise').polyfill();
-require('whatwg-fetch');
 
 export const BASE_URL = '/v1';
 

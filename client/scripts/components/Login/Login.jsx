@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import './login.scss';
-
 import React, { PropTypes } from 'react';
 
 import Form from 'components/Form/Form';
+
+import './login.scss';
 
 /**
  * This is the Login component class.

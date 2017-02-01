@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -10,6 +10,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 
+import demo from './demo';
 import auth from './auth';
 import user from './user';
 import login from './login';
@@ -18,6 +19,7 @@ import login from './login';
  * This is the root reducer. It combines all reducers into a unified one.
  */
 const rootReducer = combineReducers({
+  demo,
   auth,
   user,
   login,

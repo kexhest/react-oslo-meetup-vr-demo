@@ -1,4 +1,11 @@
-import './field.scss';
+/*
+ * This file is part of the React Oslo Meetup VR Demo application.
+ *
+ * (c) Magnus Bergman <hello@magnus.sexy>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 import React, { PropTypes, Component } from 'react';
 import isEqual from 'lodash/isEqual';
@@ -9,6 +16,8 @@ import Text from './Text/Text';
 import Select from './Select/Select';
 
 import Message from '../Message/Message';
+
+import './field.scss';
 
 /**
  * This is the Field component class.
@@ -30,10 +39,6 @@ export default class Field extends Component {
     this.state = {
       focus: false,
     };
-
-    this.onChangeHandler = this.onChangeHandler.bind(this);
-    this.onFocusHandler = this.onFocusHandler.bind(this);
-    this.onBlurHandler = this.onBlurHandler.bind(this);
   }
 
   /**
@@ -55,7 +60,7 @@ export default class Field extends Component {
    *
    * @return void
    */
-  onChangeHandler(e) {
+  onChangeHandler = (e) => {
     const { type, name, label, required, constraints, confirm, validate } = this.props;
     const value = type === 'checkbox' ? e.target.checked : e.target.value;
 
@@ -67,7 +72,7 @@ export default class Field extends Component {
    *
    * @return void
    */
-  onFocusHandler() {
+  onFocusHandler = () => {
     this.setState({ focus: true });
   }
 
@@ -76,7 +81,7 @@ export default class Field extends Component {
    *
    * @return void
    */
-  onBlurHandler() {
+  onBlurHandler = () => {
     const { name, label, value, required, constraints, confirm, validate } = this.props;
 
     this.setState({ focus: false });

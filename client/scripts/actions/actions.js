@@ -1,5 +1,5 @@
 /*
- * This file is part of the React Redux starter repo.
+ * This file is part of the React Oslo Meetup VR Demo application.
  *
  * (c) Magnus Bergman <hello@magnus.sexy>
  *
@@ -8,6 +8,7 @@
  */
 
 import { API } from 'middleware/api';
+import { SOCKET } from 'middleware/socket';
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -68,4 +69,67 @@ export const logoutUser = token => ({
     token,
     types: [LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAILURE],
   },
+});
+
+export const NEXT_DEMO_REQUEST = 'NEXT_DEMO_REQUEST';
+export const NEXT_DEMO_SUCCESS = 'NEXT_DEMO_SUCCESS';
+export const NEXT_DEMO_FAILURE = 'NEXT_DEMO_FAILURE';
+
+/**
+ * Next demo action.
+ *
+ * @return {object}
+ */
+export const nextDemo = data => ({
+  [SOCKET]: {
+    event: 'next',
+    data,
+    types: [NEXT_DEMO_REQUEST, NEXT_DEMO_SUCCESS, NEXT_DEMO_FAILURE],
+  },
+});
+
+export const PLAY_DEMO_REQUEST = 'PLAY_DEMO_REQUEST';
+export const PLAY_DEMO_SUCCESS = 'PLAY_DEMO_SUCCESS';
+export const PLAY_DEMO_FAILURE = 'PLAY_DEMO_FAILURE';
+
+/**
+* Play demo action.
+*
+* @return {object}
+*/
+export const playDemo = data => ({
+  [SOCKET]: {
+    event: 'play',
+    data,
+    types: [PLAY_DEMO_REQUEST, PLAY_DEMO_SUCCESS, PLAY_DEMO_FAILURE],
+  },
+});
+
+export const PAUSE_DEMO_REQUEST = 'PAUSE_DEMO_REQUEST';
+export const PAUSE_DEMO_SUCCESS = 'PAUSE_DEMO_SUCCESS';
+export const PAUSE_DEMO_FAILURE = 'PAUSE_DEMO_FAILURE';
+
+/**
+ * Pause demo action.
+ *
+ * @return {object}
+ */
+export const pauseDemo = data => ({
+  [SOCKET]: {
+    event: 'pause',
+    data,
+    types: [PAUSE_DEMO_REQUEST, PAUSE_DEMO_SUCCESS, PAUSE_DEMO_FAILURE],
+  },
+});
+
+export const REFRESH = 'REFRESH';
+
+/**
+ * Refresh demo action.
+ *
+ * @return {object}
+ */
+export const refreshDemo = data => ({
+  type: REFRESH,
+  payload: data,
 });
