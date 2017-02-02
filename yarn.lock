@@ -61,6 +61,19 @@ aframe-bmfont-text-component@^0.1.4:
     object-assign "^4.1.0"
     three-bmfont-text "^2.1.0"
 
+aframe-extras@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/aframe-extras/-/aframe-extras-3.2.4.tgz#fbd710ac2998bdbbfc260b784d2eba30b67afd2f"
+  dependencies:
+    aframe-physics-system "^1.2.0"
+
+aframe-physics-system@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/aframe-physics-system/-/aframe-physics-system-1.2.0.tgz#8af97970f8011633845e764b81e50bf1a72825b1"
+  dependencies:
+    cannon "github:donmccurdy/cannon.js#v0.6.2-dev1"
+    three-to-cannon "^1.0.2"
+
 aframe-react@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-3.4.1.tgz#de612f62bb9d32d17a251c31027214ab3af6d7af"
@@ -1616,6 +1629,10 @@ caniuse-api@^1.5.2:
 caniuse-db@^1.0.30000346, caniuse-db@^1.0.30000617, caniuse-db@^1.0.30000618:
   version "1.0.30000618"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000618.tgz#821258ff484f662864f28ffbcf849a6247acf1fa"
+
+"cannon@github:donmccurdy/cannon.js#v0.6.2-dev1":
+  version "0.6.2"
+  resolved "https://codeload.github.com/donmccurdy/cannon.js/tar.gz/022e8ba53fa83abf0ad8a0e4fd08623123838a17"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -7957,6 +7974,10 @@ three-buffer-vertex-data@^1.0.0:
   resolved "https://registry.yarnpkg.com/three-buffer-vertex-data/-/three-buffer-vertex-data-1.1.0.tgz#cf228e78427665884b961a4cabe1f85ed39f82b1"
   dependencies:
     flatten-vertex-data "^1.0.0"
+
+three-to-cannon@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/three-to-cannon/-/three-to-cannon-1.0.3.tgz#a4c258a58fc3d5625448c9e0b673f0e7fd5a6822"
 
 three@^0.83.0:
   version "0.83.0"

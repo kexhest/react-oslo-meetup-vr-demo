@@ -9,6 +9,9 @@ export default [
     name: 'city',
   },
   {
+    name: 'ocean',
+  },
+  {
     name: 'links',
   },
 ];

@@ -14,6 +14,7 @@ import Links from 'components/Links/Links';
 
 import Hello from './Hello/Hello';
 import Oslo from './Oslo/Oslo';
+import Ocean from './Ocean/Ocean';
 import City from './City/City';
 
 import './demo.scss';
@@ -38,6 +39,10 @@ const Demo = ({ playing, name }) => {
 
       case 'city':
         demo = <City />;
+        break;
+
+      case 'ocean':
+        demo = <Ocean />;
         break;
 
       case 'links':

@@ -1,7 +1,7 @@
 {
   "name": "react-oslo-meetup-vr-demo",
   "version": "1.0.0",
-  "description": "A simple WebVR demo page.",
+  "description": "A simple WebVR demo application.",
   "author": "Magnus Bergman <hello@magnus.sexy>",
   "engines": {
     "node": "7.4.0",
@@ -78,6 +78,7 @@
     "aframe": "aframevr/aframe",
     "aframe-animation-component": "^3.2.1",
     "aframe-bmfont-text-component": "^0.1.4",
+    "aframe-extras": "^3.2.4",
     "aframe-react": "^3.4.1",
     "aframe-text-component": "^0.4.2",
     "autoprefixer": "^6.7.2",
