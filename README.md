@@ -48,6 +48,13 @@ To run the tests simply run:
 npm t
 ```
 
+### Usage
+The landing page is in a paused state when the project is first built. To show a demo, you have to log in to the admin panel which is located at /admin. Set up a user with a password in your .env config file and use that information to log in.
+
+Inside the admin panel you should see a dashboard with buttons for each of the registered demos. To activate a demo just press it, and make sure the "play" button is active.
+
+Now a demo should be active on the default route.
+
 ### Publishing to Heroku
 This repo contains all necessary files to publish straight to Heroku using the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
